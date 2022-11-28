@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:biblioteca xmlns:ns2="es.joseluisgs.dam.model" id="59c2c5b9-f483-4919-ae17-05aef4964247">
+    <libros>
+        <libro id="fe8a8994-b529-4c63-85c9-0fe01a78030b">
+            <autor>Kathy Sierra</autor>
+            <titulo>Head First Java, 2nd Edition</titulo>
+            <editorial>amazon</editorial>
+            <isbn>978-0596009205</isbn>
+        </libro>
+    </libros>
+    <centro>IES Luis Vives Bookstore</centro>
+    <direccion>Leganés</direccion>
+</ns2:biblioteca>

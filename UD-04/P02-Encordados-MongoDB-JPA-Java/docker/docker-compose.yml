@@ -1,0 +1,52 @@
+# Indicamos la versión
+version: '3.7'
+
+# Mis servicios
+# Iniciamos los servicios
+services:
+  # MONGO DB
+  mongodb-server:
+    image: mongo
+    container_name: mongo-server
+    ports:
+      - 27017:27017
+    expose:
+      - 27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongoadmin
+      MONGO_INITDB_ROOT_PASSWORD: mongopass
+      MONGO_INITDB_DATABASE: test
+      # ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+    command: --auth
+    # Monto la unidad y le cargo unos datos
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+      - mongo-vol:/data/db
+    networks:
+      - mongo-network
+    # restart: always
+
+  # MONGO EXPRESS
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-empress
+    ports:
+      - 8081:8081
+    networks:
+      - mongo-network
+    depends_on:
+      - mongodb-server
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: mongoadmin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: mongopass
+      ME_CONFIG_MONGODB_SERVER: mongodb-server
+    restart: unless-stopped
+
+# Mi volumenes de datos compartidos
+volumes:
+  mongo-vol:
+
+# Si queremos que tengan una red propia a otros contenedores
+networks:
+  mongo-network:
+    driver: bridge

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:biblioteca xmlns:ns2="es.joseluisgs.dam.model" id="077be4e4-0880-437c-9b90-ce7ae86b3b36">
+    <libros>
+        <libro id="2848fc1e-74be-4abd-b9cf-3edd7157f624">
+            <autor>Joshua Bloch</autor>
+            <titulo>Effective Java</titulo>
+            <editorial>Amazon</editorial>
+            <isbn>978-0134685991</isbn>
+        </libro>
+        <libro id="fe8a8994-b529-4c63-85c9-0fe01a78030b">
+            <autor>Kathy Sierra</autor>
+            <titulo>Head First Java, 2nd Edition</titulo>
+            <editorial>amazon</editorial>
+            <isbn>978-0596009205</isbn>
+        </libro>
+    </libros>
+    <centro>Acceso a Datos</centro>
+    <direccion>Comunidad de Madrid</direccion>
+</ns2:biblioteca>
